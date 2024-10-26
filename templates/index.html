@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speech Diarization - Firepower</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="static/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
@@ -23,13 +23,16 @@
         <section class="upload-section">
             <form method="POST" enctype="multipart/form-data">
                 <input type="file" name="file" accept="audio/*" required>
-                <label for="num_speakers">Number of Speakers:</label>
-                <input type="number" name="num_speakers" id="num_speakers" value="2" min="1" required>
+                <div class="number-of-speakers">
+                    <label for="num_speakers">Number of Speakers:</label>
+                    <input type="number" name="num_speakers" id="num_speakers" value="5" min="1" required>
+                </div>
                 <button type="submit" class="upload-btn">
                     <i class="fas fa-upload"></i> Upload
                 </button>
             </form>
         </section>
+
 
         <!-- Transcript Section -->
         {% if transcript %}
@@ -63,6 +66,19 @@
     <script>
         document.querySelector("form").addEventListener("submit", function(event) {
             document.getElementById("loading-overlay").style.display = "flex";
+        });
+
+        // Collapsible transcript sections
+        document.querySelectorAll(".collapsible").forEach(button => {
+            button.addEventListener("click", function() {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
         });
     </script>
 </body>
