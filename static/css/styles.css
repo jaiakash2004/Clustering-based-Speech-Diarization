@@ -1,0 +1,202 @@
+/* General Reset and Font Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f9fafc;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #0d6efd;
+    margin-bottom: 0.5em;
+}
+
+header p {
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* Upload Section */
+.upload-section {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.upload-section input[type="file"],
+.upload-section input[type="number"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 300px;
+}
+
+.upload-section .upload-btn {
+    display: inline-block;
+    background-color: #0d6efd;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.upload-section .upload-btn:hover {
+    background-color: #084298;
+}
+
+/* Transcript Section with Scroll */
+.transcript-section {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Collapsible Transcript Sections */
+.collapsible {
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible:hover {
+    background-color: #e2e2e2;
+}
+
+.collapsible:after {
+    content: '+';
+    font-weight: bold;
+}
+
+.collapsible.active:after {
+    content: '-';
+}
+
+.collapsible-content {
+    padding: 10px 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.speaker-block {
+    margin-bottom: 10px;
+}
+
+.segment {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    margin-bottom: 8px;
+    transition: transform 0.3s;
+}
+
+.segment:hover {
+    transform: scale(1.02);
+}
+
+.speaker-name {
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Audio Player */
+.audio-player {
+    margin-top: 10px;
+    width: 100%;
+}
+
+audio {
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+/* Loading Overlay */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #0d6efd;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
