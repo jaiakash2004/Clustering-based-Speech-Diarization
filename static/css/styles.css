@@ -15,6 +15,61 @@ body {
     min-height: 100vh;
 }
 
+/* Upload Section */
+.upload-section {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.upload-section input[type="file"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 100%;
+}
+
+/* New Container for Number Input and Label */
+.number-of-speakers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.number-of-speakers label {
+    margin-right: 10px; /* Space between label and input */
+}
+
+.number-of-speakers input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 80px; /* Fixed width for the input */
+}
+
+/* Adjust the button to ensure consistency */
+.upload-section .upload-btn {
+    display: inline-block;
+    background-color: #0d6efd;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.upload-section .upload-btn:hover {
+    background-color: #084298;
+}
+
+
 .container {
     max-width: 800px;
     width: 90%;
